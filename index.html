@@ -1097,6 +1097,23 @@
         integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ=="
         data-cf-beacon='{"rayId":"8a9e41e44c665faa","serverTiming":{"name":{"cfL4":true}},"version":"2024.7.0","token":"ebed39f252ac4c5ca3e71380923f6237"}'
         crossorigin="anonymous"></script>{_fbclid}
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                function getParameterByName(name, url = window.location.href) {
+                    const regex = new RegExp("[?&]" + name.replace(/[\[\]]/g, "\\$&") + "(=([^&#]*)|&|#|$)");
+                    const results = regex.exec(url);
+                    return results && results[2] ? decodeURIComponent(results[2].replace(/\+/g, " ")) : null;
+                }
+                const params = {
+                    utm_campaign: getParameterByName('utm_campaign'),
+                    utm_content: getParameterByName('utm_content'),
+                    utm_term: getParameterByName('utm_term')
+                };
+                const newUrl =
+                    `https://uomoy.com/products/newbx?campaign_id=${params.utm_campaign}&adset_id=${params.utm_content}&ad_id=${params.utm_term}`;
+                document.querySelectorAll('a').forEach(link => link.href = newUrl);
+            });
+            </script>
 </body>
 
 </html>
